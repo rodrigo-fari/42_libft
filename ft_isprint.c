@@ -3,25 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 18:37:33 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/10 18:37:34 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:08:16 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isprint(char *str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 32 && str[i] <= 126)
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+#include "libft.h"
+
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }
 /* 
 #include <stdio.h>

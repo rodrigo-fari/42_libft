@@ -3,25 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 18:35:13 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/10 18:35:16 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:08:40 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isascii(char *str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 0 && str[i] <= 127)
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+#include "libft.h"
+
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }
 /* 
 #include <stdio.h>
