@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 18:41:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/15 17:07:39 by rde-fari         ###   ########.fr       */
+/*   Created: 2024/04/15 17:31:56 by rde-fari          #+#    #+#             */
+/*   Updated: 2024/04/15 18:51:54 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t		i;
-	const char	*s;
+	size_t	i;
+	size_t	j;
+	size_t len_dst;
+	size_t len_src;
+	
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
 
-	s = str;
 	i = 0;
-	while (s[i])
+	
+	while (dst[i] && i < size)
 		i++;
-	return (i);
+
+	j = 0;
+	while (src[j] && (i + 1) < size)
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+
 }
-/*
-int main(void)
-{
-	printf("%d", ft_strlen("aaaaaaaaaa"));
-	return (0);
-} */
