@@ -13,25 +13,26 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-//---Library
+//---------Library----------//
 # include <unistd.h>
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
 # include <stddef.h>
 
-//---Functions
+//---------Functions---------//
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-void	*ft_memset(void *s, int c, size_t n);
-size_t	ft_strlen(const char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	ft_bzero(void *s, size_t n);
-char	ft_strlcat(char *dst, const char *src, size_t size);
+void	*ft_memset(void *s, int c, size_t n);
+size_t	ft_strlen(const char *str);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
-//---End If
+//---------End If---------//
 #endif
