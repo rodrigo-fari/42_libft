@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 18:41:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/18 17:56:59 by rde-fari         ###   ########.fr       */
+/*   Created: 2024/04/18 17:05:51 by rde-fari          #+#    #+#             */
+/*   Updated: 2024/04/18 18:21:31 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t		i;
-	const char	*s;
+	unsigned char	*destiny;
+	unsigned char	*source;
 
-	s = str;
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	source = (unsigned char *)src;
+	destiny = dest;
+	if (source > destiny)
+	{
+		ft_memcpy(destiny, source, n);
+	}
+	if (destiny > source)
+	{
+		while (n > 0)
+		{
+			destiny[n - 1] = source[n - 1];
+			n--;
+		}
+	}
+	return (dest);
 }
-/* 
-int main(void)
-{
-	printf("%ld", ft_strlen("rodrigo"));
-	return (0);
-} */

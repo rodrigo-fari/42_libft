@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 18:41:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/18 17:56:59 by rde-fari         ###   ########.fr       */
+/*   Created: 2024/04/18 12:00:26 by rde-fari          #+#    #+#             */
+/*   Updated: 2024/04/18 12:45:37 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	size_t		i;
-	const char	*s;
+	int	i;
+	int	signal;
+	int	result;
 
-	s = str;
+	signal = 1;
+	result = 0;
 	i = 0;
-	while (s[i])
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
 		i++;
-	return (i);
+	if ((nptr[i] == '-') || (nptr[i] == '+'))
+	{
+		if (nptr[i] == '-')
+			signal = signal * (-1);
+		i++;
+	}
+	while ((nptr[i] >= '0' && nptr[i] <= '9'))
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (result * signal);
 }
-/* 
-int main(void)
-{
-	printf("%ld", ft_strlen("rodrigo"));
-	return (0);
-} */
