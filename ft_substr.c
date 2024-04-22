@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 18:41:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/22 17:06:26 by rde-fari         ###   ########.fr       */
+/*   Created: 2024/04/22 14:20:21 by rde-fari          #+#    #+#             */
+/*   Updated: 2024/04/22 17:48:28 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t		i;
-	const char	*s;
+	size_t	i;
+	char	*substr;
 
-	s = str;
+	if (!s || start >= ft_strlen(s) || len == 0)
+		return (ft_strdup(""));
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	substr = ft_calloc(sizeof(char), (len + 1));
+	if (!substr)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	while (i < len && s[start + i])
+	{
+		substr[i] = s[start + i];
 		i++;
-	return (i);
+	}
+	return (substr);
 }

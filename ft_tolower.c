@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:19:00 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/15 15:23:32 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:06:33 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,3 @@ int	ft_tolower(int c)
 	}
 	return (c);
 }
-
-/* 
-int main (void)
-{
-	char s1[]="VARIAVEL nUmErO Um";
-	ft_tolower(s1);
-	return (0);
-}
- */
