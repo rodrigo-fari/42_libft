@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:51:15 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/18 16:11:37 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:31:25 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,3 @@ char	*ft_strdup(const char *s)
 		dup[i] = '\0';
 	return (dup);
 }
-/* 
-int main()
-{
-	char *str;
- 	char *s = "I malloc so I am.";
-	ft_strdup(s);
-	return (0);
-} */

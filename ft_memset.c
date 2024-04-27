@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:21:18 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/15 16:45:52 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:31:20 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/* 
-int main(void)
-{
-	int s1[]={1, 2, 3, 4, 5};
-	ft_memset(s1, 'A', 10);
-	write(1, &s1, sizeof(&s1));
-	return (0);
-} */

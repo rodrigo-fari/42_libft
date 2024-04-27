@@ -3,52 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-fari <rde-fari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:03:14 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/23 17:49:49 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:12:09 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(char *s1, char *s2)
+/* char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s1[i] || s2[i])
+	while (s[i])
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		if (s[i] == (char)c)
+		{
+			return ((char *)&s[i]);
+		}
+		i++;
 	}
-	return (0);
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
-
-
-char	*ft_strtrim(char *s1, char *set)
+ */
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	s1_size;
-	size_t	i;
-	size_t	j;
-	size_t	temp;
+	size_t	start;
+	size_t	end;
+	char	*str;
 
+	if (!s1)
+		return (NULL);
 	s1_size = ft_strlen(s1);
-	i = 0;
-	while (s1)
-	{
-		while (ft_strcmp(s1[i], set[i]) == 0)
-			i++;
-	}
-	j = s1_size;
-	temp = 0;
-	while (j > 0)
-	{
-		while (ft_strcmp(s1[j], set[temp]) == 0)
-			j--;
-		temp++;
-	}
-	return (ft_substr(s1, i, ((i + j) - s1_size)));
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = s1_size;
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	str = ft_substr(s1, start, (end - start));
+	if (!str)
+		return (NULL);
+	return (str);
 }
