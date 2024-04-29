@@ -1,4 +1,3 @@
-
 NAME= libft.a
 CC= cc
 FLAGS= -Wall -Wextra -Werror
@@ -11,8 +10,8 @@ SRC= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 	
-
 
 OBJB= $(SRCB:.c=.o)
 SRCB= ft_lstnew_bonus.c 
@@ -21,18 +20,22 @@ RM= rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
+	clear
+	@echo "Todos os arquivos compilados com sucesso"
+	@sleep 2
+	clear
 
 $(OBJ): $(SRC)
-	$(CC) $(FLAGS) -c $(SRC)
+	@$(CC) $(FLAGS) -c $(SRC)
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
 bonus: $(OBJ) $(OBJB)
-	ar rcs $(NAME) $(OBJ) $(OBJB)
+	@ar rcs $(NAME) $(OBJ) $(OBJB)

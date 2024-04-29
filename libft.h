@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 20:41:20 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/04/27 18:52:36 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:54:24 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,12 @@ typedef struct s_list
 
 int		ft_lstsize(t_list *lst);
 
+t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 
+void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
 
 //---------End If---------//
 #endif
