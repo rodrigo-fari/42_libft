@@ -22,10 +22,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	clear
-	@echo "Todos os arquivos compilados com sucesso"
-	@sleep 2
-	clear
 
 $(OBJ): $(SRC)
 	@$(CC) $(FLAGS) -c $(SRC)
